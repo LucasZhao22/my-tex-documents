@@ -12,8 +12,8 @@
 
 \title{\textcolor{black}{计量经济学笔记}}
 
-\author{赵之航}
-\institute{中央财经大学}
+\author{\textcolor{black}{赵之航}}
+\institute{\textcolor{black}{中央财经大学}}
 
 \date{\zhtoday}
 
@@ -24,5 +24,47 @@
 \centerline{
     \includegraphics[width=0.2\textwidth]{Cufenew.jpg}
 }
+
+
+\section{计量经济学定义与stata命令入门}
+
+\textbf{计量经济学}是一门基于统计方法的发展来估计经济关系、检验经济理论、评价和实施政府和商业政策的一门学科。
+
+\subsection{经济数据结构}
+
+\begin{itemize}
+    \item \textbf{横截面数据}：在给定时点对个人、家庭、企业、城市、州、国家或一系列其他单位采集样本所构成的数据渠。（随机抽样）
+    \item \textbf{时间序列数据}：由对一个或几个变量不同时间的观测值所构成。（数据频率）
+    \item \textbf{混合横截面数据}：有些数据既有横截面数据的特点。又有时间序列的特点。例如，假设对美国的家庭进行了两次横截面数据的调查，一次在1985 年，一次在1990 年。
+    在1985年，对家庭的一个随机样本调查了工资、储蓄、家庭规模等变量。到了1990 年．用同样的调查问题又对家庭的一个新随机祥本进行调查。为了扩大我们的样本容量，可
+    以将这两年的数据合并成一个混合横截面数据。
+    \item \textbf{面板数据}：由数据集中每个横截面单位的一个时间序列组成。
+\end{itemize}
+
+\subsection{stata常用命令}
+
+\begin{lstlisting}[frame=none]
+    describe(d)
+    list(l) 变量名，变量名，... (in 起始数字/结束数字) (if 条件)
+    drop if
+    keep if
+    count if
+    summarize(su) 变量名，变量名，... (if 条件)
+    su 变量名,detail
+    mean 变量名，变量名，...
+    pwcorr a b c,sig star(.05) {选择项“sig”表示显示相关系数的显著性水平(即p值，列在相关系数的下方)，选择项“star(.05)”表示给所有显著性水平小于或等于5%的相关系数打上星号。}
+    scatter(sc) tc q {散点图}
+    tabulate(ta) pl {经验累积分布函数}
+    generate(g,gen) n=_n {生成新变量}
+    twoway (scatter tc q)(lfit tc q) {线性回归}
+    twoway (scatter tc q)(qfit tc q) {二次回归}
+    display(di) {计算器}
+    regress(reg) lntc lnq lnpl lnpk lnpf {OLS}
+    *help(h)
+\end{lstlisting}
+
+\begin{note}
+    *表示重要，\{\}内的内容为注释
+\end{note}
 
 \end{document}
