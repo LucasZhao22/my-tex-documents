@@ -108,9 +108,10 @@
 \hypersetup{%
   pdfborder={0 0 0},
   colorlinks,
-  citecolor=ecolor,
+  citecolor=green,
   filecolor=ecolor,
-  linkcolor=ecolor,
+  linkcolor=red,
+  anchorcolor=blue,
   urlcolor=ecolor
 }
 
