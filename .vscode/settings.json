@@ -45,8 +45,8 @@
         },
         {
             // Windows Biber 编译
-            "name": "Windows BibTex",
-            "command": "BibTex",
+            "name": "Windows Biber",
+            "command": "Biber",
             "args": [
                 "%DOCFILE%"
             ]
@@ -113,7 +113,7 @@
             "name": "Windows xe->bib->xe->xe 复杂编译",
             "tools": [
                 "Windows XeLaTeX",
-                "Windows BibTex",
+                "Windows Biber",
                 "Windows XeLaTeX",
                 "Windows XeLaTeX"
             ]

@@ -1,0 +1,94 @@
+% !TEX TS-program = xelatex
+% !TEX encoding = UTF-8 Unicode
+% !Mode:: "TeX:UTF-8"
+
+\documentclass{resume}
+\usepackage{zh_CN-Adobefonts_external} % Simplified Chinese Support using external fonts (./fonts/zh_CN-Adobe/)
+% \usepackage{NotoSansSC_external}
+% \usepackage{NotoSerifCJKsc_external}
+% \usepackage{zh_CN-Adobefonts_internal} % Simplified Chinese Support using system fonts
+\usepackage{linespacing_fix} % disable extra space before next section
+\usepackage{cite}
+\usepackage{fontspec}
+\newcommand{\tnewroman}{\fontspec{timesi}}
+
+\begin{document}
+\pagenumbering{gobble} % suppress displaying page number
+
+\name{Zhao Zhihang}
+
+\basicInfo{
+  \email{lucaszhao22@foxmail.com} \textperiodcentered\ 
+  \phone{+86~186~3689~3217} \textperiodcentered\ 
+  \homepage{https://lucaszhao22.github.io/}}
+
+\section{\faGraduationCap\  Education}
+\datedsubsection{\textbf{Central University of Finance and Economics}, Beijing, China}{2018 -- Present}
+\textit{Bachelor student} in National Economic Management, Penultimate year undergraduates\qquad \quad \ {\tnewroman GPA:84.413/100}
+{\small
+    \begin{itemize}
+      \item{Principle of Economics(1) (94), Principle of Economics(2) (90), Econometrics (89), Mathematical Economics (98), Intermediate Macroeconomics (93), 
+      Intermediate Microeconomics (86), Real Analysis (94) etc.}
+    \end{itemize}
+    }
+
+\section{\faTrophy\ Honors and Awards}
+\datedline{The 30th Beijing College Student Mathematics Competition (Economics), \textit{\nth{2} Prize}}{Dec. 2019}
+\datedline{The 11th National College Student Mathematics Competition (non-mathematics), \textit{\nth{2} Prize}}{Nov. 2019}
+\datedline{Contemporary Undergraduate Mathematical Contest in Modeling, \textit{\nth{1} Prize}}{Nov. 2020}
+\datedline{Luzhou Laojiao Award Fund}{Jun. 2019}
+
+\section{\faCogs\ Skills}
+% increase linespacing [parsep=0.5ex]
+\begin{itemize}[parsep=0.5ex]
+  \item {\tnewroman Programming Languages}: Python,  \LaTeX\ , Markdown, Git, Stata
+  \item {\tnewroman English}：CET4:\textbf{620}, CET6:\textbf{555}, TOEFL:90(\textbf{Listening 30}), \textbf{have translation ability}, Posted 3 episodes of independently translated TV show on my personal account on bilibili, \textbf{fluent in spoken English}                
+  \item Proficient in the use of {\tnewroman Microsoft office}, major courses's grades are great, \textbf{have good analytical capability}
+  \item I have experience in essay writing and my \textbf{research ability} is strong. During the Contemporary Undergraduate Mathematical Contest in Modeling, 
+  as the team leader, I completed the model modeling and writing for Problem B independently, established the basic method for solving the specific problems, 
+  used \LaTeX\ for layout and coordinated the group members to complete the paper.
+\end{itemize}
+
+\section{\faUsers\ Experience}
+\datedsubsection{\textbf{Admissions Program Research}}{Dec. 2019 -- Feb. 2020}
+\role{Data processing}{Prof. Guo Dongmei}
+% Collate and enter the admissions data for Shanxi Province into Excel
+\begin{itemize}
+  \item OCR scanning photos into documents, preliminary processing data using xlrd, openpyxl, pandas modules in python to transcribe documents into Excel tables, then use Excel macros to split tables on demand.
+  \item This workflow can process more than 3,000 data items at a time, nearly 10 times more efficient than manual entry. For troubleshooting purpose, it is recommended to process around 1,000 to 2,000 data items at a time.
+\end{itemize}
+
+\datedsubsection{\textbf{Automatic check-in for health report}}{Jun. 2020}
+\role{Python}{Personal project, based on an open source program in GitHub}
+% Automated script for health report.
+\begin{itemize}
+  \item Use Fiddler to grab the login cookie to simulate web login, store post information, and use the corresponding api to fill in daily.
+  \item This project saves students from  daily health report, and only need manual changes when necessary.
+\end{itemize}
+
+\datedsubsection{\textbf{Personal website}}{Aug. 2020}
+\role{Markdown}{Personal project}
+\begin{onehalfspacing}
+    Using hexo framework and butterfly theme with some customisation.
+\end{onehalfspacing}
+
+% Reference Test
+%\datedsubsection{\textbf{Paper Title\cite{zaharia2012resilient}}}{May. 2015}
+%An xxx optimized for xxx\cite{verma2015large}
+%\begin{itemize}
+%  \item main contribution
+%\end{itemize}
+
+\section{\faInfo\ Miscellaneous}
+% increase linespacing [parsep=0.5ex]
+\begin{itemize}[parsep=0.5ex]
+  %\item 个人博客: https://lucaszhao22.github.io/
+  \item \textbf{Strong self-learner and skilled in information retrieval}, responsible, willing to collaborate, patient and meticulous, with a passion for perfection.
+  \item Strong compressive ability, able to work overtime to meet project schedules.
+\end{itemize}
+
+%% Reference
+%\newpage
+%\bibliographystyle{IEEETran}
+%\bibliography{mycite}
+\end{document}
