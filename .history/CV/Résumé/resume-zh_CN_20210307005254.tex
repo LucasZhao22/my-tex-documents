@@ -1,0 +1,93 @@
+% !TEX TS-program = xelatex
+% !TEX encoding = UTF-8 Unicode
+% !Mode:: "TeX:UTF-8"
+
+\documentclass{resume}
+\usepackage{zh_CN-Adobefonts_external} % Simplified Chinese Support using external fonts (./fonts/zh_CN-Adobe/)
+% \usepackage{NotoSansSC_external}
+% \usepackage{NotoSerifCJKsc_external}
+% \usepackage{zh_CN-Adobefonts_internal} % Simplified Chinese Support using system fonts
+\usepackage{linespacing_fix} % disable extra space before next section
+\usepackage{cite}
+
+\begin{document}
+\pagenumbering{gobble} % suppress displaying page number
+
+\name{赵之航}
+
+\basicInfo{
+  \email{2018311178@email.cufe.edu.cn} \textperiodcentered\ 
+  \phone{+86~186~3689~3217} \textperiodcentered\ 
+  \homepage{https://lucaszhao22.github.io/}}
+
+\section{\faGraduationCap\  教育背景}
+\datedsubsection{\textbf{中央财经大学}, 北京}{2018 -- 至今}
+\textit{在读本科生}\ 国民经济管理
+{\small
+    \begin{itemize}
+      \item{经济学原理（1）(94)，经济学原理（2）(90)，计量经济学导论（双语）(89)，数理经济学(98)，中级宏观经济学（双语）(93)，
+      中级微观经济学（双语）(86)，实变函数(94)等}
+    \end{itemize}
+    }
+
+\section{\faUsers\ 项目经历}
+\datedsubsection{\textbf{招生计划研究}}{2019年12月 -- 2020年2月}
+\role{数据录入}{郭冬梅教授}
+将招生指南中山西省的招生数据整理录入Excel
+\begin{itemize}
+  \item OCR扫描将照片转成文档，python程序初步处理将文档转录为Excel表格，使用xlrd,openpyxl,pandas模块，利用Excel宏将表格按需求拆分
+  \item 对比人工录入，效率提升近10倍，使用本工作流可以一次性处理3000条以上的数据，为排错方便，建议一次处理的数据条目在1000到2000条左右
+\end{itemize}
+
+\datedsubsection{\textbf{疫情防控通自动打卡}}{2020年6月}
+\role{Python}{个人项目，基于GitHub中的开源程序开发}
+\begin{onehalfspacing}
+  自动化运行的填写疫情防控通脚本，托管于腾讯云函数
+\begin{itemize}
+  \item 使用Fiddler抓取登录的cookie进行模拟网页登录，存储post的信息，利用对应的api每日填报
+  \item 该项目使学生免于每日重复地填报，仅在有必要时进行手动更改上报
+\end{itemize}
+\end{onehalfspacing}
+
+\datedsubsection{\textbf{个人网站}}{2020年8月}
+\role{Markdown}{个人项目}
+\begin{onehalfspacing}
+采用hexo框架，主题为butterfly，并进行一些定制化，托管于GitHub。
+\end{onehalfspacing}
+
+% Reference Test
+%\datedsubsection{\textbf{Paper Title\cite{zaharia2012resilient}}}{May. 2015}
+%An xxx optimized for xxx\cite{verma2015large}
+%\begin{itemize}
+%  \item main contribution
+%\end{itemize}
+
+\section{\faCogs\ 个人技能}
+% increase linespacing [parsep=0.5ex]
+\begin{itemize}[parsep=0.5ex]
+  \item 编程语言: Python、 \LaTeX\ 、Markdown、Git、Stata，可熟练使用office，材料制作能力较强，样式美观完善
+  \item 英语：四级620，六级555，托福90（听力满分），有较强的听译及翻译能力，在哔哩哔哩的个人账号上发布有3集独立制作的网剧翻译作品，口语流利                  
+  \item 专业知识：专业课成绩良好，有较强的数理能力
+  \item 具有一定的论文写作经验，研究能力较强，在2020年全国大学生数学建模比赛中作为队长独立完成B题中三道问题的模型建模和论文写作，为后续具体问题的求解建立了基本方法，
+  使用 \LaTeX\ 进行排版，协调组员完成论文
+\end{itemize}
+
+\section{\faTrophy\ 获奖情况}
+\datedline{北京市第三十届大学生数学竞赛（经管类）, \textit{二等奖}}{2019 年12 月}
+\datedline{第十一届全国大学生数学竞赛（非数学类）, \textit{二等奖}}{2019 年11 月}
+\datedline{2020年全国大学生数学建模比赛, \textit{北京市一等奖}}{2020 年11 月}
+\datedline{泸州老窖奖励基金}{2019 年6 月}
+
+\section{\faInfo\ 其他}
+% increase linespacing [parsep=0.5ex]
+\begin{itemize}[parsep=0.5ex]
+  %\item 个人博客: https://lucaszhao22.github.io/
+  \item 有较强的自学能力和信息检索能力，对待工作认真负责，乐于协作，耐心细致，追求完美
+  \item 有较强的抗压能力，接受加班
+\end{itemize}
+
+%% Reference
+%\newpage
+%\bibliographystyle{IEEETran}
+%\bibliography{mycite}
+\end{document}

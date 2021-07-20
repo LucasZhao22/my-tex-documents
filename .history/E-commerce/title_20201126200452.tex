@@ -1,0 +1,53 @@
+\begin{titlepage}
+
+    \begin{center}
+        \includegraphics[width=6cm]{logo}\\
+        \vspace*{21.8pt}
+
+        {\zihao{1}\heiti{本科生毕业论文（设计）\\}}% 封面这几个字，应该是雅黑
+        \vspace{21.8pt}
+        \par
+        \zihao{4}
+        \def\tabcolsep{6pt}
+        \expandarg
+        \newcounter{title_str_number}
+        \vspace*{60pt}
+
+        \begin{tabular}{ll}
+            \songti\bfseries \zihao{3} 论文题目（中文）% “论文题目（中文）”这几个字，应该是加粗（宋体加粗）
+            \forloop{title_str_number}{1}{\value{title_str_number}<6}{%
+                \StrFindGroup{\@title}{\value{title_str_number}}[\mygroup]%
+                \IfStrEq{\mygroup}{}{}{%
+                    & {\StrFindGroup{\@title}{\value{title_str_number}}[\mygroup]\LZUunderline[320pt]{ \songti \zihao{3}\mygroup}}\\[0.40cm]%
+                }%
+            }%
+            \songti\bfseries  \zihao{3} 论文题目（英文）% “论文题目（英文）”这几个字，应该是加粗（宋体加粗）
+            \forloop{title_str_number}{1}{\value{title_str_number}<6}{%
+                \StrFindGroup{\the\entitle}{\value{title_str_number}}[\mygroup]%
+                \IfStrEq{\mygroup}{}{}{%
+                    & {\StrFindGroup{\the\entitle}{\value{title_str_number}}[\mygroup]\LZUunderline[320pt]{\zihao{3}\mygroup}}\\[0.40cm]%
+                }%
+            }%
+        \end{tabular}
+
+        \vspace*{60pt}
+
+        \begin{tabular}{cc}
+            {\songti \zihao{3}{学生姓名}} &
+            {\LZUunderline[180pt]{ \songti \zihao{3}\@author}}\\[0.40cm]
+            {\songti \zihao{3}{指导教师}} &
+            {\LZUunderline[180pt]{ \songti \zihao{3}  \the\advisor}} \\[0.40cm]
+            {\songti \zihao{3}{学\qquad 院}} &
+            {\LZUunderline[180pt]{ \songti  \zihao{3} \the\college}} \\[0.40cm]
+            {\songti \zihao{3} {专\qquad 业}} &
+            {\LZUunderline[180pt]{ \songti  \zihao{3} \the\major}}\\[0.40cm]
+            {\songti \zihao{3}{年\qquad 级}} &
+            {\LZUunderline[180pt]{ \songti \zihao{3}  \the\grade}}\\[0.40cm]
+        \end{tabular}
+        \par
+        \vspace{40pt}
+        {\ziju{0}\zihao{3} \heiti{兰州大学教务处}}
+    \end{center}
+    \clearpage
+    
+    \end{titlepage}

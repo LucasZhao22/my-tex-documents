@@ -1,0 +1,240 @@
+\documentclass[addpoints,answers]{exam}
+% \documentclass[addpoints]{exam}
+
+\usepackage{xeCJK}
+\usepackage{zhnumber}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{caption}
+
+\title{PS1 解答\footnote{Powered by \LaTeX}}
+\author{赵之航 \\ 2018311178 \\ 国民经济管理18}
+\date{\zhtoday}
+
+\pagestyle{headandfoot}
+\firstpageheadrule
+\firstpageheader{}{}{}
+\runningheader{国民经济管理18}
+{PS1解答}
+{赵之航}
+\runningheadrule
+\firstpagefooter{}{第\thepage\ 页（共\numpages 页）}{}
+\runningfooter{}{第\thepage\ 页（共\numpages 页）}{}
+
+% no box for solutions
+% \unframedsolutions
+
+\pointname{ 分}
+\pointformat{（\thepoints）}
+
+\totalformat{共\totalpoints 分}
+
+\setlength\linefillheight{.5in}
+
+% \renewcommand{\solutiontitle}{\noindent\textbf{答：}}
+\renewcommand{\solutiontitle}{\noindent\textbf{解：}}
+
+\begin{document}
+
+\maketitle
+
+\begin{questions}
+
+\question[20] 考察一张2013至2016年的数据表中表示个人上报健康措施的变量 $\mathcal{H}$ ，探究一项自2015年起实施的医保政策对该变量的影响，已知政策覆盖不完全。分别定义两个虚拟变量
+$$
+Policy_i=\left\{
+    \begin{aligned}
+    1, \ &i\mbox{被医保政策覆盖} \\
+    0, \ &\mbox{其他}
+    \end{aligned}
+    \right.
+$$
+以及
+$$
+Post_t=\left\{
+    \begin{aligned}
+    1, \ &\mbox{时间是2015或2016年} \\
+    0, \ &\mbox{其他}
+    \end{aligned}
+    \right.
+$$
+回归模型(\ref{reg1.1})为
+\begin{equation}
+\mathcal{H}_{it} = \beta_{0} + \beta_1 Policy_i \times Post_t + u_{it} \label{reg1.1}
+\end{equation}
+
+\begin{parts}
+    \part 哪一组是参照组（即$\beta_0$表示哪一组）？
+    \part 参数$\beta_1$的意义是什么？
+
+    \uplevel{一位研究者构造了一个更为复杂的饱和模型(\ref{reg1.2})}
+\begin{equation}
+    \mathcal{H}_{it} = \beta_{0} + \beta_1 Policy_i + \beta_2 Post_t + \beta_3 Policy_i \times Post_t + u_{it} \label{reg1.2}
+\end{equation}
+
+    \part
+    $\beta_0,\beta_0+\beta_1,\beta_0+\beta_2,\beta_0+\beta_1+\beta_2+\beta_3$表示的实验组分别是哪个？
+    \part
+    为什么不考察$\beta_0+\beta_1+\beta_2$代表的实验组？
+    \part
+    $\beta_3$是$\beta_0,\beta_0+\beta_1,\beta_0+\beta_2,\beta_0+\beta_1+\beta_2+\beta_3$的线性组合吗？如何理解$\beta_3$的意义？
+\end{parts}
+
+\begin{solution}
+
+\begin{parts}
+    \part
+    当$Policy_i,Post_t$中至少有一个为零时，有$\mathcal{H}_{it} = \beta_{0}$，故$\beta_0$表示未被医保政策覆盖或者2013、2014年上报的人群组成的参照组。
+    \part
+    $\beta_1$表示2013、2014年上报的人群与医保覆盖范围两者对个人上报健康措施的统计差异。
+    \part
+    $\beta_0$表示未被医保政策覆盖以及2013、2014年上报的人群\\
+    $\beta_0+\beta_1$表示被医保政策覆盖且在2013、2014年上报的人群\\
+    $\beta_0+\beta_2$表示未被医保政策覆盖且在2015、2016年上报的人群\\
+    $\beta_0+\beta_1+\beta_2+\beta_3$表示被医保政策覆盖且在2015、2016年上报的人群
+    \part
+    $\beta_0+\beta_1+\beta_2$没有意义，这由于$\beta_0,\beta_1,\beta_2$均存在时，$Policy_i,Post_t$均为1，故$\beta_3$必存在。
+    \part
+    是。$\beta_3 = (\beta_0+\beta_1+\beta_2+\beta_3) -(\beta_0+\beta_1) -(\beta_0+\beta_2) + \beta_0$\\
+    $\beta_3$表示2013、2014年上报的人群对个人上报健康措施统计结果的影响随医保覆盖范围的变化而变化。
+\end{parts}
+
+\end{solution}
+
+\newpage
+
+\question[20] 已知数据如表(\ref{tab2})
+
+\begin{table}[!htbp]
+    \centering
+    \caption{A Random Sample of Students’ Critical Thinking Scores}\label{tab2}
+    \begin{tabular}{cccccccc}
+        \toprule  %添加表格头部粗线
+        Student ID& isID08& isID09& Year& isYr17& isYr18& DevPlan& Score\\
+        \midrule  %添加表格中横线
+        2016311407& 0& 0& 2016& 0& 0& 0& 86\\
+        2016311408& 1& 0& 2016& 0& 0& 0& 84\\
+        2016311409& 0& 1& 2016& 0& 0& 0& 81\\
+        2016311407& 0& 0& 2017& 1& 0& 1& 96\\
+        2016311408& 1& 0& 2017& 1& 0& 0& 84\\
+        2016311409& 0& 1& 2017& 1& 0& 0& 83\\
+        2016311407& 0& 0& 2018& 0& 1& 1& 95\\
+        2016311408& 1& 0& 2018& 0& 1& 1& 93\\
+        2016311409& 0& 1& 2018& 0& 1& 0& 87\\
+        \bottomrule %添加表格底部粗线
+    \end{tabular}
+\end{table}
+
+\begin{parts}
+    \part 求解下列回归模型
+    \begin{align}
+        Score_{it} &= \beta_{0} + \beta_1 DevPlan_{it} + \phi_i + \varphi_t + u_{it}, \label{reg2.1}\\
+        Score_{it} &= \gamma_0 + \pi_i + \lambda_t + v_{it}^y, \label{reg2.2}\\
+        DevPlan_{it} &= \theta_0 + \zeta_i + \xi_t + v_{it}^x, \label{reg2.3}\\
+        \widehat{v}_{it}^y &= \beta_1 \widehat{v}_{it}^x + v_{it} \label{reg2.4}
+    \end{align}
+    其中$i$表示学生，$t$表示年份，$\widehat{v}_{it}^y = Score_{it} - \widehat{\gamma_0} - \widehat{\pi_i} - \widehat{\lambda_t}$，
+    $\widehat{v}_{it}^x = DevPlan_{it} - \widehat{\theta_0} - \widehat{\zeta_i} - \widehat{\xi_t}$
+
+    \part 在回归表中增加一列以求解
+    \begin{equation}
+        \widehat{v}_{it}^y = \alpha_0 + \alpha_1 \widehat{v}_{it}^x + v_{it} \label{reg2.5}
+    \end{equation}
+    $\widehat{\alpha}_1$与$\widehat{\beta}_1$接近吗？为什么？
+
+\end{parts}
+
+\begin{solution}
+    
+    \begin{parts}
+        \part 如下图\\
+        \begin{center}
+            \includegraphics[width=0.8\textwidth]{fig1.jpg}
+            \captionof{figure}{模型(\ref{reg2.1})}
+            \label{fig1}
+
+            \includegraphics[width=0.8\textwidth]{fig2.jpg}
+            \captionof{figure}{模型(\ref{reg2.2})}
+            \label{fig2}
+
+            \includegraphics[width=0.8\textwidth]{fig3.jpg}
+            \captionof{figure}{模型(\ref{reg2.3})}
+            \label{fig3}
+
+            \includegraphics[width=0.8\textwidth]{fig4.jpg}
+            \captionof{figure}{模型(\ref{reg2.4})}
+            \label{fig4}
+        \end{center}
+        
+        \part 增加一列后的回归结果如下
+        \begin{center}
+            \includegraphics[width=0.8\textwidth]{fig5.jpg}
+            \captionof{figure}{模型(\ref{reg2.5})}
+            \label{fig5}
+        \end{center}
+        $\widehat{\alpha}_1$与$\widehat{\beta}_1$接近，这由于截距项的$t$值为$0.00$，$P>|t|$的概率为$1.000$，截距项必趋近于零。
+
+    \end{parts}
+
+\end{solution}
+
+\question[40] 阅读参考文献，主要模型为
+
+\begin{equation}
+    Y_{igast} = \alpha_0 + \alpha_1 Eligible_g + \alpha_2 (Eligible_g \times Post_t) + \beta X_{ig} + \gamma_{st} + \gamma_{rt}
+    + \gamma_{at} + \epsilon_{igast} \label{reg3.1}
+\end{equation}
+
+\setCJKfamilyfont{hwxk}{STXingkai}             %使用STXingkai华文行楷字体
+\newcommand{\huawenxingkai}{\CJKfamily{hwxk}}
+
+\begin{parts}
+    \part 为什么不加入个体固定效应（如$\gamma_i$）？
+    \part 为什么不加入年份与资格固定效应（如$\gamma_{gt}$）？
+    \part 为什么不加入$\alpha_3 Post_t$？
+    \part 你认为$Eligible_g$的系数$\alpha_1$可估计吗？请说明理由。
+    \part 在加入{\huawenxingkai 移民与资格的年龄}，{\huawenxingkai 年龄与资格固定效应}以及{\huawenxingkai 年份固定效应}后，作者需要加入{\huawenxingkai 移民年份}这一虚拟变量吗？若需要，给出该虚拟变量可估计的实例；
+    若不需要，给出理由。
+    \part 你能给出不在现有控制变量或固定效应之内的其他控制变量或固定效应吗？你认为这是必要的吗？
+\end{parts}
+
+\begin{solution}
+
+    \begin{parts}
+        \part 个体需要固定的要素过多，包含移民时间、出生地区、移民年龄等等，方便起见，文中使用了$X_{ig}$这个控制变量，故再添加个体固定效应是不必要的。
+        \part 年份与资格的固定效应对不同的个体都会不同，这由于同一年份不同个体的状态不同，真正有意义的是年龄。文中加入了年龄与资格固定效应。
+        \part 加入$Post_t$会影响估计的准确性，这由于政策的效应具有滞后性，个体对政策的反应需要时间。政策刚施行时，个体来不及对现有的计划做出相应的调整，如果加入会弱化政策在模型中的作用，与实际情况产生偏差。
+        \part 我认为可估计，这由于交互项$Eligible_g \times Post_t$包含了政策对个体资格的影响，排除了干扰。
+        \part 不需要。根据已有的变量可以推算出个体的移民年份，再加入这一虚拟变量会导致多重共线性。
+        \part 加入新的控制变量——社区平均犯罪率，这是必要的，社区的治安情况将极大地影响青少年的发展。
+    \end{parts}
+
+\end{solution}
+
+\newpage
+
+\question[20] 在参考文献中，作者将主要模型中的标准误按州进行了聚类。
+
+\begin{parts}
+    \part 请举出两个观测值误差项具有相关性的实例。
+    \part 请举出两个观测值误差项不具有相关性的实例。
+    \part 有的研究者可能希望按州和年份进行聚类，这就是所谓的 "双向聚类标准误"。请举出两个观测值误差项不具有相关性的实例。
+    \part 你更喜欢哪种聚类标准误，是以州聚类的，还是以州和年聚类的？
+\end{parts}
+
+\begin{solution}
+
+    \begin{parts}
+        \part 同一社区的两名移民可能会相互影响，如教唆吸毒、帮派犯罪等。
+        \part 富人社区与平民社区的移民相互影响的可能性较低。
+        \part 两名移民所在州的社区、移民年份（涉及到移民时的政策）以及原籍不同，他们的误差项不具有相关性。
+        \part 我更偏向以州和年聚类的，因为这种方式可以更好地排除内生因素的干扰，尽可能使模型的影响因素外生。
+    \end{parts}
+        
+\end{solution}
+
+\end{questions}
+
+\end{document}

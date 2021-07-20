@@ -1,0 +1,68 @@
+%!TEX program = xelatex
+\documentclass[cn,hazy,blue,14pt,normal]{elegantnote}
+\usepackage{ctex}
+
+
+\setCJKfamilyfont{hwxk}{STXingkai}             %使用STXingkai华文行楷字体
+\newcommand{\huawenxingkai}{\CJKfamily{hwxk}}
+\setCJKfamilyfont{hwcy}{STCaiyun}             %使用STCaiyun华文彩云字体
+\newcommand{\huawencaiyun}{\CJKfamily{hwcy}}
+\setCJKfamilyfont{hwhp}{STHupo}             %使用STHupo华文琥珀字体
+\newcommand{\huawenhupo}{\CJKfamily{hwhp}}
+\setlength{\parindent}{4.1em}
+
+
+\title{\textcolor{black}{横截面与面板数据分析笔记}}
+
+\author{\textcolor{black}{\kaishu 赵之航}}
+\institute{\textcolor{black}{中央财经大学}}
+
+\date{\zhtoday}
+
+\begin{document}
+
+\maketitle
+
+\centerline{
+    \includegraphics[width=0.2\textwidth]{Cufenew.jpg}
+}
+
+
+\section{复习}
+
+\subsection{概率论}
+
+\begin{definition}
+    一般说来，如果$p(x)$是一个与$x$有关的条件（或命题），则所有合乎这个条件（或使这个命题成立）的$x$所构成的集合便记为$\{x;p(x)\}$。
+    又如果$E$是一个事先给定了的集合，则$E[x;p(x)]$便表示$E$中所有使条件$p(x)$满足的$x$所构成的集合，也就是$\{x;x\in E,p(x)\}$
+\end{definition}
+
+\begin{theorem}
+    $A=B$的充要条件是$A\subset B$,且$B\subset A$
+\end{theorem}
+
+\begin{theorem}
+    如果$A\subset B,B\subset A$，则$A\subset C$
+\end{theorem}
+
+\begin{definition}
+    一般说来，如果$\Lambda$是一集合，对于每一个$\lambda \in \Lambda$，都相应地给定了一个集合$A_\lambda$（以$\Lambda$为下标集的）一族集合。
+    这时这族集合的交定义为$$\{x;\mbox{对每一个}\lambda \in \Lambda \mbox{,都有}x\subset A_\lambda\}$$
+    记为$\mathop{\cap}\limits_{\lambda \in \Lambda} A_\lambda$.如果$\Lambda=\{1,2,\dots,n\} \mbox{或} \{1,2,\dots,n,\dots\}$，
+    则上述交就分别简记为$\mathop{\cap}\limits_{i=1}^n A_i$和$\mathop{\cap}\limits_{i=1}^{\infty} A_i$
+\end{definition}
+
+\begin{note}
+    集族就是集合的集合（以集合为元素的集合）
+\end{note}
+
+\begin{theorem}
+    集合的运算满足交换律，结合律，分配律以及幂等律。
+\end{theorem}
+
+\begin{theorem}
+    （1）$A\cap B \subset A \subset A\cup B$\\
+    \indent（2）若
+\end{theorem}
+
+\end{document}
